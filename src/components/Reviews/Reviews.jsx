@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { APIservise } from 'components/services/APIservice';
 
-export function Reviews() {
+function Reviews() {
   const { movieId } = useParams();
   const [reviewList, setReviewList] = useState([]);
   const getMovieReviews = async () => {
@@ -30,3 +30,5 @@ export function Reviews() {
     </section>
   );
 }
+
+export default Reviews;

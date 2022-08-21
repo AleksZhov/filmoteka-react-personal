@@ -1,10 +1,10 @@
 import { useParams, useNavigate, Outlet, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { Container } from '../App.styled';
 import s from './MovieDetails.module.css';
 
 import { APIservise } from 'components/services/APIservice';
-export function MovieDetails() {
+const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const [error, setError] = useState(null);
@@ -68,9 +68,13 @@ export function MovieDetails() {
           )}
         </section>
         <section>
-          <Outlet />
+          <Suspense>
+            <Outlet />
+          </Suspense>
         </section>
       </Container>
     </>
   );
-}
+};
+
+export default MovieDetails;

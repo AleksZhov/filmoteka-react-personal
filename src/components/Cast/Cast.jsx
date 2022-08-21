@@ -8,7 +8,6 @@ const Cast = () => {
 
   const getMovieCast = async () => {
     const result = await APIservise.getMovieCredits(movieId);
-    await console.log(result);
     setCastList(result.cast);
   };
   useEffect(() => {
@@ -24,7 +23,7 @@ const Cast = () => {
         {castList.map(({ cast_id, profile_path, name, character }) => (
           <li key={cast_id}>
             <img
-              src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
+              src={`https://image.tmdb.org/t/p/w500${profile_path}`}
               alt={name}
               width="100"
             />

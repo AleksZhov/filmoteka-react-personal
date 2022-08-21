@@ -3,7 +3,7 @@ import { APIservise } from 'components/services/APIservice';
 import { Container } from '../App.styled';
 import { Link } from 'react-router-dom';
 
-export const Movies = () => {
+const Movies = () => {
   const [inputSearchValue, setInputSearchValue] = useState('');
   const [searchValue, setSearchValue] = useState('');
   const [searchedMoviesArr, setSearchedMoviedArr] = useState([]);
@@ -19,7 +19,6 @@ export const Movies = () => {
       searchValue,
       setError
     );
-    await console.log(result);
     const receivedMoviesArray = await result.results;
     setSearchedMoviedArr(receivedMoviesArray);
   };
@@ -65,3 +64,5 @@ export const Movies = () => {
     </main>
   );
 };
+
+export default Movies;
