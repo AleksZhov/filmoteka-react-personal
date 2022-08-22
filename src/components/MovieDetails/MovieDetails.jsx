@@ -1,9 +1,12 @@
-import { useParams, useNavigate, Outlet, Link } from 'react-router-dom';
-import { useState, useEffect, Suspense } from 'react';
+import { useParams, useNavigate, Link, Routes, Route } from 'react-router-dom';
+import { useState, useEffect, Suspense, lazy } from 'react';
 import { Container } from '../App.styled';
 import s from './MovieDetails.module.css';
-
 import { APIservise } from 'components/services/APIservice';
+
+const Cast = lazy(() => import('../Cast/Cast'));
+const Reviews = lazy(() => import('../Reviews/Reviews'));
+
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
@@ -69,7 +72,10 @@ const MovieDetails = () => {
         </section>
         <section>
           <Suspense>
-            <Outlet />
+            <Routes>
+              <Route path="cast" element={<Cast />} />
+              <Route path="reviews" element={<Reviews />} />
+            </Routes>
           </Suspense>
         </section>
       </Container>

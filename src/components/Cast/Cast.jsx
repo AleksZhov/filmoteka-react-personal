@@ -14,23 +14,26 @@ const Cast = () => {
     getMovieCast();
     //eslint-disable-next-line
   }, []);
+
   return (
     <section>
       {castList.length === 0 && (
         <p> We don't have cast information for the moment</p>
       )}
       <ul>
-        {castList.map(({ cast_id, profile_path, name, character }) => (
-          <li key={cast_id}>
-            <img
-              src={`https://image.tmdb.org/t/p/w500${profile_path}`}
-              alt={name}
-              width="100"
-            />
-            <p>{name}</p>
-            <p> Character : {character}</p>
-          </li>
-        ))}
+        {castList.map(({ cast_id, profile_path, name, character }) => {
+          const path = profile_path
+            ? `https://image.tmdb.org/t/p/w500/${profile_path}`
+            : 'https://upload.wikimedia.org/wikipedia/commons/4/47/GarvaGriha_in_KaryaBinayak.jpg';
+
+          return (
+            <li key={cast_id}>
+              <img src={path} alt={name} width="100" />
+              <p>{name}</p>
+              <p> Character : {character}</p>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
