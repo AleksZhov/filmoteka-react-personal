@@ -23,7 +23,7 @@ const Cast = () => {
       <ul>
         {castList.map(({ cast_id, profile_path, name, character }) => {
           const path = profile_path
-            ? `https://image.tmdb.org/t/p/w500/${profile_path}`
+            ? `https://image.tmdb.org/t/p/w200/${profile_path}`
             : 'https://upload.wikimedia.org/wikipedia/commons/4/47/GarvaGriha_in_KaryaBinayak.jpg';
 
           return (

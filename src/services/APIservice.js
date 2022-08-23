@@ -5,7 +5,7 @@ export const APIservise = {
   getTrendingMovies: async setError => {
     try {
       const response = await fetch(
-        `${API_URL}trending/all/day?api_key=${API_KEY}`
+        `${API_URL}trending/movie/day?api_key=${API_KEY}`
       );
       if (!response.ok) {
         throw new Error(response.status);
