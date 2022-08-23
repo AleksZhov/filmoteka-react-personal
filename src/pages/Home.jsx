@@ -1,6 +1,6 @@
-import { APIservise } from 'components/services/APIservice';
+import { APIservise } from '../services/APIservice';
 import { useState, useEffect } from 'react';
-import { Container } from '../App.styled';
+import { Container } from '../components/App.styled';
 import { Link } from 'react-router-dom';
 
 const Home = () => {

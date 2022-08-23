@@ -1,11 +1,11 @@
 import { useParams, useNavigate, Link, Routes, Route } from 'react-router-dom';
 import { useState, useEffect, Suspense, lazy } from 'react';
-import { Container } from '../App.styled';
-import s from './MovieDetails.module.css';
-import { APIservise } from 'components/services/APIservice';
+import { Container } from '../components/App.styled';
+import s from '../components/MovieDetails/MovieDetails.module.css';
+import { APIservise } from '../services/APIservice';
 
-const Cast = lazy(() => import('../Cast/Cast'));
-const Reviews = lazy(() => import('../Reviews/Reviews'));
+const Cast = lazy(() => import('../components/Cast/Cast'));
+const Reviews = lazy(() => import('../components/Reviews/Reviews'));
 
 const MovieDetails = () => {
   const { movieId } = useParams();

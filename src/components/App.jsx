@@ -4,10 +4,10 @@ import { Routes, Route } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout';
 // const createAsyncComp = path => lazy(() => import(path));
 
-const Home = lazy(() => import('./Home/Home'));
+const Home = lazy(() => import('../pages/Home'));
 const NotFound = lazy(() => import('./NotFound/NotFound'));
-const Movies = lazy(() => import('./Movies/Movies'));
-const MovieDetails = lazy(() => import('./MovieDetails/MovieDetails'));
+const Movies = lazy(() => import('../pages/Movies'));
+const MovieDetails = lazy(() => import('../pages/MovieDetails'));
 
 // const Cast = createAsyncComp('./Cast/Cast.jsx');
 // const Home = createLazyComp('./Home/Home.jsx');
